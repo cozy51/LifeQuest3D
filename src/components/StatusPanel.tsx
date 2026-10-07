@@ -1,0 +1,2 @@
+import {useGameStore} from '../store/gameStore';
+export function StatusPanel(){const s=useGameStore(s=>s.stats);return <div className="stats">{[['¥','所持金',s.money.toLocaleString('ja-JP')+'円'],['♥','幸福度',s.happiness],['✦','経験',s.experience],['+','健康',s.health],['◷','年齢',s.age+'歳'],['◇','職業',s.job]].map(([icon,label,value])=><div className="stat" key={label}><span className="stat-icon">{icon}</span><div><small>{label}</small><strong key={value}>{value}</strong></div></div>)}</div>}
